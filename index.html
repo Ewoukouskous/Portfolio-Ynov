@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Nino Lefebvre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0A0F2C;
+            --text-color: #FFFFFF;
+            --primary-color: #00F0FF;
+            --secondary-color: #2D2F33;
+            --accent-color: #00FFB2;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Background animé */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-color);
+            top: 60%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            top: 80%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            background: var(--accent-color);
+            top: 10%;
+            left: 70%;
+            animation-delay: -15s;
+        }
+
+        .shape-5 {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            top: 72%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        .shape-6 {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-color);
+            top: 12%;
+            left: 86%;
+            animation-delay: -5s;
+        }
+
+        .shape-7 {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            top: 38%;
+            left: 45%;
+            animation-delay: 0s;
+        }
+
+        .shape-8 {
+            width: 100px;
+            height: 100px;
+            background: var(--accent-color);
+            top: 18%;
+            left: 50%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-30px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(20px) rotate(240deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg);
+            }
+        }
+
+        /* Styles personnalisés */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(45, 47, 51, 0.5);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            border: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        .tech-tag {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .social-link {
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .dropdown {
+            background: var(--secondary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .section-title {
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- Background animé -->
+<div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+    <div class="floating-shape shape-6"></div>
+    <div class="floating-shape shape-7"></div>
+    <div class="floating-shape shape-8"></div>
+</div>
+
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-50" style="background: rgba(45, 47, 51, 0.95); backdrop-filter: blur(10px);">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="text-xl font-bold gradient-text">Portfolio</div>
+            <div class="flex space-x-6">
+                <a href="#accueil" class="social-link">Accueil</a>
+                <a href="#projets" class="social-link">Projets</a>
+                <a href="#contact" class="social-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Section Présentation -->
+<section id="accueil" class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="container mx-auto text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                <span class="gradient-text">LEFEBVRE Nino</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl mb-4 text-gray-300">
+                Étudiant en Cybersécurité
+            </h2>
+            <p class="text-lg md:text-xl mb-8 text-gray-400">
+                Bachelor 1 Cybersécurité • Toulouse Ynov Campus
+            </p>
+            <p class="text-base md:text-lg mb-12 max-w-2xl mx-auto text-gray-300">
+                Pris de passion par l'informatique ainsi que la cybersécurité depuis jeune, je vous expose ici mes
+                projets réalisé durant mon année
+            </p>
+
+            <!-- Liens sociaux -->
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="https://www.linkedin.com/in/nino-lefebvre-aa957b329/" target="_blank"
+                   class="social-link text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Ewoukouskous" target="_blank" class="social-link text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://tryhackme.com/p/Ewoukouskous" target="_blank" class="social-link text-2xl">
+                    <i class="fas fa-flag"></i>
+                </a>
+                <a href="https://www.root-me.org/Ewoukouskous?lang=fr#edcaff1eb7e1f9619f9ee43787113e84" target="_blank"
+                   class="social-link text-2xl">
+                    <i class="fas fa-user-secret"></i>
+                </a>
+            </div>
+
+            <a href="#projets" class="btn-primary px-8 py-3 rounded-full font-semibold inline-block">
+                Découvrir mes projets
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Section Projets -->
+<section id="projets" class="py-20 px-6">
+    <div class="container mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title inline-block">
+                Mes Projets
+            </h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Divers projets que j'ai réalisé durant mon année de Bachelor 1 en Cybersécurité.
+            </p>
+        </div>
+
+        <!-- Filtre par année -->
+        <div class="flex justify-center mb-12">
+            <select id="yearFilter"
+                    class="dropdown px-6 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="all">Toutes les années</option>
+                <option value="B1">Bachelor 1</option>
+                <option value="B2">Bachelor 2</option>
+                <option value="B3">Bachelor 3</option>
+                <option value="M1">Master 1</option>
+                <option value="M2">Master 2</option>
+            </select>
+        </div>
+
+        <!-- Grille des projets -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!--            &lt;!&ndash; Projet Template 1 - Scanner de Vulnérabilités &ndash;&gt;-->
+            <!--            <div class="project-card card-hover bg-gray-800 rounded-xl p-6" data-year="B1">-->
+            <!--                <div class="mb-4">-->
+            <!--                    <img src="https://via.placeholder.com/400x200/00F0FF/FFFFFF?text=Scanner+Vulnérabilités" alt="Scanner de Vulnérabilités" class="w-full h-48 object-cover rounded-lg">-->
+            <!--                </div>-->
+            <!--                <h3 class="text-xl font-bold mb-3 gradient-text">Scanner de Vulnérabilités</h3>-->
+            <!--                <p class="text-gray-300 mb-4">-->
+            <!--                    Outil automatisé de détection de vulnérabilités web développé en Python.-->
+            <!--                    Capable d'identifier les failles XSS, SQL injection et autres vulnérabilités communes.-->
+            <!--                </p>-->
+            <!--                <div class="flex flex-wrap gap-2 mb-6">-->
+            <!--                    <span class="tech-tag px-3 py-1 rounded-full text-sm">Python</span>-->
+            <!--                    <span class="tech-tag px-3 py-1 rounded-full text-sm">Requests</span>-->
+            <!--                    <span class="tech-tag px-3 py-1 rounded-full text-sm">BeautifulSoup</span>-->
+            <!--                    <span class="tech-tag px-3 py-1 rounded-full text-sm">SQLMap</span>-->
+            <!--                </div>-->
+            <!--                <div class="flex space-x-3">-->
+            <!--                    <a href="https://github.com" target="_blank" class="btn-secondary px-4 py-2 rounded-lg text-sm flex items-center">-->
+            <!--                        <i class="fab fa-github mr-2"></i>Code-->
+            <!--                    </a>-->
+            <!--                    <a href="#" class="btn-primary px-4 py-2 rounded-lg text-sm">-->
+            <!--                        Démo Live-->
+            <!--                    </a>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+            <div class="project-card card-hover bg-gray-800 rounded-xl p-6" data-year="B1">
+                <div class="mb-4">
+                    <img src="https://via.placeholder.com/400x200/00F0FF/FFFFFF?text=Scanner+Vulnérabilités"
+                         alt="Scanner de Vulnérabilités" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <h3 class="text-xl font-bold mb-3 gradient-text">Scanner de Vulnérabilités</h3>
+                <p class="text-gray-300 mb-4">
+                    Outil automatisé de détection de vulnérabilités web développé en Python.
+                    Capable d'identifier les failles XSS, SQL injection et autres vulnérabilités communes.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="tech-tag px-3 py-1 rounded-full text-sm">Python</span>
+                    <span class="tech-tag px-3 py-1 rounded-full text-sm">Requests</span>
+                    <span class="tech-tag px-3 py-1 rounded-full text-sm">BeautifulSoup</span>
+                    <span class="tech-tag px-3 py-1 rounded-full text-sm">SQLMap</span>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="https://github.com" target="_blank"
+                       class="btn-secondary px-4 py-2 rounded-lg text-sm flex items-center">
+                        <i class="fab fa-github mr-2"></i>Code
+                    </a>
+                    <a href="#" class="btn-primary px-4 py-2 rounded-lg text-sm">
+                        Démo Live
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact" class="py-20 px-6">
+    <div class="container mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title inline-block">
+                Contactez-moi
+            </h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Intéressé par mon profil ? N'hésitez pas à me contacter pour discuter d'opportunités
+            </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Informations de contact -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Restons en contact</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-green-400 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-black"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Email</p>
+                                <p class="text-white">votre.email@exemple.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-green-400 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-black"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Téléphone</p>
+                                <p class="text-white">+33 X XX XX XX XX</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-cyan-400 to-green-400 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-black"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">Localisation</p>
+                                <p class="text-white">Toulouse, France</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Réseaux sociaux -->
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Suivez-moi</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://linkedin.com" target="_blank" class="social-link text-2xl">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="social-link text-2xl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://tryhackme.com" target="_blank" class="social-link text-2xl">
+                                <i class="fas fa-flag"></i>
+                            </a>
+                            <a href="https://root-me.org" target="_blank" class="social-link text-2xl">
+                                <i class="fas fa-user-secret"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire de contact -->
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Nom</label>
+                            <input type="text" id="name"
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email"
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Sujet</label>
+                            <input type="text" id="subject"
+                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5"
+                                      class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full btn-primary px-6 py-3 rounded-lg font-semibold">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 px-6 border-t border-gray-800">
+    <div class="container mx-auto text-center">
+        <p class="text-gray-400">
+            © 2025 Votre Nom. Tous droits réservés. | Étudiant en Cybersécurité à Toulouse Ynov Campus
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Filtre des projets par année
+    const yearFilter = document.getElementById('yearFilter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    yearFilter.addEventListener('change', function () {
+        const selectedYear = this.value;
+
+        projectCards.forEach(card => {
+            const cardYear = card.getAttribute('data-year');
+
+            if (selectedYear === 'all' || cardYear === selectedYear) {
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            } else {
+                card.style.transition = 'all 0.3s ease';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(-20px)';
+
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
+
+    // Smooth scroll pour la navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animation des éléments au scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observer les cartes de projets
+    projectCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+
+    // Gestion du formulaire de contact
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Récupérer les données du formulaire
+        const formData = new FormData(this);
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Validation simple
+        if (!name || !email || !subject || !message) {
+            alert('Veuillez remplir tous les champs');
+            return;
+        }
+
+        // Simulation d'envoi
+        alert('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
+        this.reset();
+    });
+</script>
+</body>
+</html>
